@@ -111,7 +111,8 @@ pub struct NormalTransaction {
     pub transaction_index: Option<U64>,
     #[serde(with = "jsonstring")]
     pub from: GenesisOption<Address>,
-    pub to: Option<Address>,
+    #[serde(with = "jsonstring")]
+    pub to: GenesisOption<Address>,
     pub value: U256,
     pub gas: U256,
     pub gas_price: Option<U256>,
